@@ -1,0 +1,33 @@
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .l {
+    background: linear-gradient(-45deg,  #ad3b3b, #f05d5d);
+    background-size: 100% 100%;
+    animation: gradient 11s ease infinite;
+    bottom: 5px;
+    padding: cover;
+    text-align: center;
+    
+  }
+  
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+  
+    50% {
+        background-position: 100% 50%;
+    }
+  
+    100% {
+        background-position: 0% 50%;
+    }
+  }
+  
+  
+  

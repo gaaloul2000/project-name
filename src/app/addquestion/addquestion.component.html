@@ -1,0 +1,1069 @@
+<html>
+
+<br>
+
+<br>
+  <div class="container">
+    <div class="row justify-content-center text-center mb-4">
+      
+      <div class="col-xl-6 col-lg-8 col-sm-10">
+  
+  
+        <br>
+        <br>
+  
+        <h1 class="text" style="font-size: 40px;font-size: 40px;line-height: 40px;margin-bottom: 20px;font-weight: 900;color: #d33535"><i class="bi bi-journal-medical"></i> Ajouter les questions
+        </h1>
+        <br> <h3 class="dark-color">Do some awsome stuff with me.</h3>
+        <br>
+        <p class="text--muted mb-0">Merci de compléter tous les étapes .</p>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+    <br>
+    <div class="row">
+      <br><br><br>
+      <div class="col-7">
+  
+        <div class="card mb-4 bg-light shadow rounded border-0 ">
+          <div class="card-body">
+  
+      <!--
+        <div class="row">
+              <div class="col-sm-9 ">
+                <h6 class="mb-0">ajouter question radio</h6>
+              </div>
+             <div class="col-sm-9 text-secondary">
+                <label for="tentacles">nombre de solution (1-5):</label>
+  
+                <input type="number" id="tentacles" name="tentacles" value="3" min="1" max="5">
+  
+  
+  
+              </div>
+  
+            </div>
+            <hr>
+      --> 
+      <div class="row">
+   
+          <h2 class="mb-0" style=" text-align: center; color: #b92a2a;">ajouter des questions</h2>
+        
+        
+
+      </div>
+          <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">type de reponse</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                <select class="form-select" name="type" id="type" aria-label="Default select example"
+                  [(ngModel)]="form.type">
+  
+                  <option value="radio" selected="selected">radio</option>
+                  <option value="checkbox">checkbox</option>
+                  <option value="text">text</option>
+                </select>
+              </div>
+  
+            </div>
+  
+  
+            <!--
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">nom du bloc</h6>
+          </div>
+          <div class="col-sm-7 text-secondary">
+           
+            <input type="text" id="name" name="name" [(ngModel)]="form.name">
+            <br><br>
+          </div>
+            <div class="col-sm-2">
+            <button type="button" (click)="myFunctionbloc()" class="btn btn-success" ><i class="bi bi-patch-check"></i></button>
+          </div>
+          
+        </div>
+        <hr>
+        -->
+  
+            <div class="row">
+              <div class="col-sm-5">
+                <h6 class="mb-0"></h6>
+              </div>
+              <div class="col-sm-7 text-secondary">
+  
+              </div>
+            </div>
+  
+            <hr>
+            <div class="row">
+              <div class="col-sm-4">
+                <h6 class="mb-0">ajouter question</h6>
+              </div>
+              <div class="col-sm-8 text-secondary">
+                <button type="button" (click)="myFunction()" class="btn btn-danger" data-bs-toggle="modal"
+                style=" border-radius: 12px;" data-bs-target="#exampleModal">
+                  <i class="bi bi-plus-lg"></i>
+                  ajouter
+                </button>
+  
+              </div>
+            </div>
+            <hr>
+  
+            <!--
+        <div class="row">
+          <div class="col-sm-4">
+            <h6 class="mb-0"></h6>
+          </div>
+          <div class="col-sm-6 text-secondary">
+              <button class="btn btn-danger" (click)="send()">&nbsp;<i class="bi bi-send"></i>&nbsp;send&nbsp;  </button>
+          
+          </div>
+        </div>
+        <hr>
+        -->
+            <div class="row">
+              <div class="col-sm-4">
+                <h6 class="mb-0">ajouter bloc</h6>
+              </div>
+              <div class="col-sm-6 text-secondary">
+                <button class="btn btn-danger" style=" border-radius: 12px;" (click)="addbloc()">&nbsp;<i class="bi bi-send"></i>&nbsp;ajouter bloc
+                  bloc&nbsp; </button>
+  
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-4">
+                <h6 class="mb-0">enregistrer</h6>
+              </div>
+              <div class="col-sm-6 text-secondary">
+                <button class="btn btn-danger" 
+                style=" border-radius: 12px;" (click)="sendajout()">&nbsp;<i class="bi bi-send"></i>&nbsp;send&nbsp; </button>
+  
+              </div>
+            </div>
+  
+          </div>
+        </div>
+  
+      
+      </div>
+  
+     
+      <div class="col-5">
+        
+        
+
+
+
+
+
+
+
+       
+          <div class="row text-center py-1">
+         
+
+           
+            
+                <div class="col-md-9 offset-md-3">
+                    <div class="accordion accordion-flush" id="faqlist">
+                        <div class="accordion-item" *ngFor="let nom of scales">
+                            <h2 class="accordion-header" >
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"  [attr.data-bs-target]="'#'+nom" >
+                                  &nbsp; &nbsp; &nbsp; {{nom}}
+                                </button>
+                            </h2>
+                            <div id={{nom}} class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                                <div class="accordion-body">
+                                 
+                                  <div *ngFor="let a of allscale">
+                                    <div *ngIf="nom==a.answerScale">
+                
+                                     
+                
+                                      <table style="width:100%">    
+                                        <tr>
+                                          <td>{{a.customerAnswerEng}}</td>
+                                          <td>{{a.customerAnswerAr}}</td>
+                                          <td>{{a.customerAnswerFr}}</td>
+                                        </tr>
+                                        
+                                      </table> 
+                                      
+                                      
+                                    </div>
+                                  
+                                  </div>                                 </div>
+                            </div>
+                        </div>
+    
+                       
+                       
+                    </div> <br>       <button type="button" data-bs-dismiss="modal" aria-label="Close" (click)="addscale()" class="btn btn-success" ><i class="bi bi-patch-check"></i> ajouter </button>
+   
+
+                </div>
+           
+        
+              
+       
+              <!--
+                 <div class="col col-12" *ngFor="let nom of scales"> 
+                <i class="bi bi-blockquote-left"style="font-size: 5rem;"></i>
+                
+                  <h6 style="font-size: 30px;line-height: 30px;margin-bottom: 20px;font-weight: 900;">{{nom}}</h6>
+                  
+                    
+                  <div *ngFor="let a of allscale">
+                    <div *ngIf="nom==a.answerScale">
+
+                     
+
+                      <table style="width:100%">    
+                        <tr>
+                          <td>{{a.customerAnswerEng}}</td>
+                          <td>{{a.customerAnswerAr}}</td>
+                          <td>{{a.customerAnswerFr}}</td>
+                        </tr>
+                        
+                      </table> 
+                      
+                      
+                    </div>
+                  
+                  </div> 
+                          
+              
+                  <hr>  
+                      
+                   
+             </div>
+              -->
+              
+          </div>
+     
+      </div>
+    </div>
+  
+  
+  
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ajouter question</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+  
+          <div class="modal-body">
+            <form class="login-form mt-4" name="form" id="form" #f="ngForm">
+              
+  <div *ngIf="msg">
+                <h6>il faut choisir la langue ou le type de réponse</h6>
+  
+              </div>
+             
+              <div *ngIf="langue=='conditionarabe'">
+                <div *ngIf="test">
+                  <h6>السؤال </h6>
+  
+                  <input type="text" id="question" name="question" [(ngModel)]="form.question">
+                  <br>
+  <!---->
+                  <h6>ordre</h6>
+                  <input type="text" id="ordre" name="ordre" [(ngModel)]="form.ordre">
+                 <br>
+                  <h6>questionCategory</h6>
+                  <input type="text" id="questionCategory" name="questionCategory" [(ngModel)]="form.questionCategory">
+                  
+  
+  
+                  <br>
+  <br>
+  <div class="row">
+                
+    <div class="col-sm-9 text-secondary">
+      <form>
+        <select class="form-select" name="type2"  id="type2" aria-label="Default select example" [(ngModel)]="formtype.type" >
+          <option value="" selected disabled hidden>Choose here</option>
+          <option *ngFor="let number of scales" value={{number}}>{{number}}</option>
+
+  
+          
+          
+        </select>
+      </form>
+      
+    </div>
+    <div class="col-sm-3">
+  
+    </div>
+  
+    <br>
+    <br>
+    <br>
+  </div>
+                </div>
+  
+                
+               <!--
+                 <div *ngIf="test1">
+                  <h6>    الإقتراح1</h6>
+                  <input type="text" id="one" name="propositon1" [(ngModel)]="form.propositon1"> <br>
+                  <br>
+                </div>
+                <div *ngIf="test2">
+                  <h6>    الإقتراح2</h6><input type="text" id="two" name="propositon2"
+                    [(ngModel)]="form.propositon2">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test3">
+                  <h6>    الإقتراح3</h6><input type="text" id="three" name="propositon3"
+                    [(ngModel)]="form.propositon3">
+                  <br>
+  
+                </div>
+  
+                <div *ngIf="test4">
+                  <h6>    الإقتراح4</h6><input type="text" id="four" name="propositon4"
+                    [(ngModel)]="form.propositon4">
+                  <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test5">
+                  <h6>    الإقتراح5</h6><input type="text" id="five" name="propositon5"
+                    [(ngModel)]="form.propositon5">
+                  <br>
+                  <br>
+                </div>
+               --> 
+              </div>
+              <div *ngIf="langue=='conditionenglais'">
+                <div *ngIf="test">
+                  <h6>QUESTION anglais</h6>
+  
+                  <input type="text" id="question" name="question" [(ngModel)]="form.question">
+                  <br>
+                  <h6>ordre</h6>
+                  <input type="text" id="ordre" name="ordre" [(ngModel)]="form.ordre">
+                 <br>
+                  <h6>questionCategory</h6>
+                  <input type="text" id="questionCategory" name="questionCategory" [(ngModel)]="form.questionCategory">
+                  
+  
+  
+                  <br>
+  <br>
+  <div class="row">
+                
+    <div class="col-sm-9 text-secondary">
+      <form>
+        <select class="form-select" name="type2"  id="type2" aria-label="Default select example" [(ngModel)]="formtype.type" >
+          <option value="" selected disabled hidden>Choose here</option>
+          <option *ngFor="let number of scales" value={{number}}>{{number}}</option>
+          <input type="reset" value="reset" />
+  
+          
+          
+        </select>
+      </form>
+      
+    </div>
+    <div class="col-sm-3">
+  
+    </div>
+  
+    <br>
+    <br>
+    <br>
+  </div>
+                </div>
+  
+                <!--
+                  <div *ngIf="test1">
+                  <h6> proposition 1 anglais</h6>
+                  <input type="text" id="one" name="propositon1" [(ngModel)]="form.propositon1"> <br>
+                  <br>
+                </div>
+                <div *ngIf="test2">
+                  <h6> proposition 2 anglais</h6><input type="text" id="two" name="propositon2"
+                    [(ngModel)]="form.propositon2"> <br>
+                  <br>
+                </div>
+                <div *ngIf="test3">
+                  <h6> proposition 3 anglais</h6><input type="text" id="three" name="propositon3"
+                    [(ngModel)]="form.propositon3"> <br>
+  
+                </div>
+  
+                <div *ngIf="test4">
+                  <h6> proposition 4 anglais</h6><input type="text" id="four" name="propositon4"
+                    [(ngModel)]="form.propositon4"> <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test5">
+                  <h6> proposition 5 anglais</h6><input type="text" id="five" name="propositon5"
+                    [(ngModel)]="form.propositon5"> <br>
+                  <br>
+                </div>
+                -->
+                
+              </div>
+              <div *ngIf="langue=='conditionfrancais'">
+                <div *ngIf="test">
+                  <h6>QUESTION</h6>
+  
+                  <input type="text" id="question" name="question" [(ngModel)]="form.question">
+                  <br>
+                  <h6>ordre</h6>
+                  <input type="text" id="ordre" name="ordre" [(ngModel)]="form.ordre">
+                 <br>
+                  <h6>questionCategory</h6>
+                  <input type="text" id="questionCategory" name="questionCategory" [(ngModel)]="form.questionCategory">
+                  
+  
+  
+                  <br>
+  <br>
+  <div class="row">
+                
+    <div class="col-sm-9 text-secondary">
+      <form>
+        <select class="form-select" name="type2"  id="type2" aria-label="Default select example" [(ngModel)]="formtype.type" >
+          <option value="" selected disabled hidden>Choose here</option>
+          <option *ngFor="let number of scales" value={{number}}>{{number}}</option>
+          <input type="reset" value="reset" />
+  
+          
+          
+        </select>
+      </form>
+      
+    </div>
+    <div class="col-sm-3">
+  
+    </div>
+  
+    <br>
+    <br>
+    <br>
+  </div>
+  
+                  
+                </div>
+  
+                <!--
+                  <div *ngIf="test1">
+                  <h6> proposition 1</h6>
+                  <input type="text" id="one" name="propositon1" [(ngModel)]="form.propositon1"> <br>
+                  <br>
+                </div>
+                <div *ngIf="test2">
+                  <h6> proposition 2</h6><input type="text" id="two" name="propositon2" [(ngModel)]="form.propositon2">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test3">
+                  <h6> proposition 3</h6><input type="text" id="three" name="propositon3" [(ngModel)]="form.propositon3">
+                  <br>
+  
+                </div>
+  
+                <div *ngIf="test4">
+                  <h6> proposition 4</h6><input type="text" id="four" name="propositon4" [(ngModel)]="form.propositon4">
+                  <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test5">
+                  <h6> proposition 5</h6><input type="text" id="five" name="propositon5" [(ngModel)]="form.propositon5">
+                  <br>
+                  <br>
+                </div>
+                -->
+                
+              </div>
+              <div *ngIf="langue=='conditionarabefrancais'">
+  
+                <div *ngIf="test">
+                  <h6>QUESTION</h6>
+  
+                  <input type="text" id="question" name="question" [(ngModel)]="form.question">
+                  <br>
+                </div>
+                <div *ngIf="testarabe">
+                  <h6>السؤال </h6>
+  
+                  <input type="text" id="questionarabe" name="questionarabe" [(ngModel)]="form.questionarabe">
+                  <br>
+  
+                  <h6>ordre</h6>
+                  <input type="text" id="ordre" name="ordre" [(ngModel)]="form.ordre">
+                 <br>
+                  <h6>questionCategory</h6>
+                  <input type="text" id="questionCategory" name="questionCategory" [(ngModel)]="form.questionCategory">
+                  
+  
+  
+                  <br>
+  <br>
+  <div class="row">
+                
+    <div class="col-sm-9 text-secondary">
+      <form>
+        <select class="form-select" name="type2"  id="type2" aria-label="Default select example" [(ngModel)]="formtype.type" >
+          <option value="" selected disabled hidden>Choose here</option>
+          <option *ngFor="let number of scales" value={{number}}>{{number}}</option>
+          <input type="reset" value="reset" />
+  
+          
+          
+        </select>
+      </form>
+      
+    </div>
+    <div class="col-sm-3">
+  
+    </div>
+  
+    <br>
+    <br>
+    <br>
+  </div>
+                </div>
+  
+                <!--
+                  <div *ngIf="test1">
+                  <h6> proposition 1</h6>
+                  <input type="text" id="one" name="propositon1" [(ngModel)]="form.propositon1"> <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test1arabe">
+                  <h6>    الإقتراح1</h6>
+                  <input type="text" id="onearabe" name="propositon1arabe" [(ngModel)]="form.propositon1arabe"> <br>
+                  <br>
+                </div>
+                <div *ngIf="test2">
+                  <h6> proposition 2</h6><input type="text" id="two" name="propositon2" [(ngModel)]="form.propositon2">
+                  <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test2arabe">
+                  <h6>    الإقتراح2</h6><input type="text" id="twoarabe" name="propositon2arabe" [(ngModel)]="form.propositon2arabe">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test3">
+                  <h6> proposition 3</h6><input type="text" id="three" name="propositon3" [(ngModel)]="form.propositon3">
+                  <br>
+  
+                </div>
+                <div *ngIf="test3arabe">
+                  <h6>    الإقتراح3</h6><input type="text" id="threearabe" name="propositon3arabe" [(ngModel)]="form.propositon3arabe">
+                  <br>
+  
+                </div>
+  
+                <div *ngIf="test4">
+                  <h6> proposition 4</h6><input type="text" id="four" name="propositon4" [(ngModel)]="form.propositon4">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test4arabe">
+                  <h6>    الإقتراح4</h6><input type="text" id="fouraraber" name="propositon4arabe" [(ngModel)]="form.propositon4arabe">
+                  <br>
+                  <br>
+                </div>
+  
+        
+  
+                <div *ngIf="test5">
+                  <h6> proposition 5</h6><input type="text" id="five" name="propositon5" [(ngModel)]="form.propositon5">
+                  <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test5arabe">
+                  <h6>    الإقتراح5</h6><input type="text" id="fivearabe" name="propositon5arabe" [(ngModel)]="form.propositon5arabe">
+                  <br>
+                  <br>
+                </div>
+                -->
+                
+              </div>
+              <div *ngIf="langue=='conditionarabanglais'">
+                <div *ngIf="testarabe">
+                  <h6>السؤال </h6>
+  
+                  <input type="text" id="questionarabe" name="questionarabe" [(ngModel)]="form.questionarabe">
+                  <br>
+                </div>
+                <div *ngIf="testanglais">
+                  <h6>QUESTION anglais</h6>
+  
+                  <input type="text" id="questionanglais" name="questionanglais" [(ngModel)]="form.questionanglais">
+                  <br>
+  
+                  <h6>ordre</h6>
+                  <input type="text" id="ordre" name="ordre" [(ngModel)]="form.ordre">
+                 <br>
+                  <h6>questionCategory</h6>
+                  <input type="text" id="questionCategory" name="questionCategory" [(ngModel)]="form.questionCategory">
+                  
+  
+  
+                  <br>
+  <br>
+  <div class="row">
+                
+    <div class="col-sm-9 text-secondary">
+      <form>
+        <select class="form-select" name="type2"  id="type2" aria-label="Default select example" [(ngModel)]="formtype.type" >
+          <option value="" selected disabled hidden>Choose here</option>
+          <option *ngFor="let number of scales" value={{number}}>{{number}}</option>
+          <input type="reset" value="reset" />
+  
+          
+          
+        </select>
+      </form>
+      
+    </div>
+    <div class="col-sm-3">
+  
+    </div>
+  
+    <br>
+    <br>
+    <br>
+  </div>
+                </div>
+  
+  
+                <!--
+                   <div *ngIf="test1arabe">
+                  <h6>    الإقتراح1</h6>
+                  <input type="text" id="onearabe" name="propositon1arabe" [(ngModel)]="form.propositon1arabe"> <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test1anglais">
+                  <h6> proposition 1 anglais </h6>
+                  <input type="text" id="oneanglai" name="propositon1anglais" [(ngModel)]="form.propositon1anglais"> <br>
+                  <br>
+                </div>
+                <div *ngIf="test2arabe">
+                  <h6>    الإقتراح2</h6><input type="text" id="twoarabe" name="propositon2arabe" [(ngModel)]="form.propositon2arabe">
+                  <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test2anglais">
+                  <h6> proposition 2 anglais</h6><input type="text" id="twoanglais" name="propositon2anglais" [(ngModel)]="form.propositon2anglais">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test3arabe">
+                  <h6>    الإقتراح3</h6><input type="text" id="threearabe" name="propositon3arabe" [(ngModel)]="form.propositon3arabe">
+                  <br>
+  
+                </div>
+                <div *ngIf="test3anglais">
+                  <h6> proposition 3 anglais</h6><input type="text" id="threeanglais" name="propositon3anglais" [(ngModel)]="form.propositon3anglais">
+                  <br>
+  
+                </div>
+  
+                <div *ngIf="test4arabe">
+                  <h6>    الإقتراح4</h6><input type="text" id="fourarabe" name="propositon4arabe" [(ngModel)]="form.propositon4arabe">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test4anglais">
+                  <h6> proposition 4 anglais</h6><input type="text" id="fouranglais" name="propositon4anglais" [(ngModel)]="form.propositon4anglais">
+                  <br>
+                  <br>
+                </div>
+  
+        
+  
+                <div *ngIf="test5arabe">
+                  <h6>    الإقتراح5</h6><input type="text" id="five" name="propositon5arabe" [(ngModel)]="form.propositon5arabe">
+                  <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test5anglais">
+                  <h6> proposition 5 anglais</h6><input type="text" id="fiveanglais" name="propositon5anglais" [(ngModel)]="form.propositon5anglais">
+                  <br>
+                  <br>
+                </div>
+                -->
+               
+              </div>
+              <div *ngIf="langue=='conditionfrancaisanglais'">
+                <div *ngIf="test">
+                  <h6>QUESTION</h6>
+  
+                  <input type="text" id="question" name="question" [(ngModel)]="form.question">
+                  <br>
+                </div>
+                <div *ngIf="testanglais">
+                  <h6>QUESTION anglais</h6>
+  
+                  <input type="text" id="questionanglais" name="questionanglais" [(ngModel)]="form.questionanglais">
+                  <br>
+  
+                  <h6>ordre</h6>
+                  <input type="text" id="ordre" name="ordre" [(ngModel)]="form.ordre">
+                 <br>
+                  <h6>questionCategory</h6>
+                  <input type="text" id="questionCategory" name="questionCategory" [(ngModel)]="form.questionCategory">
+                  
+  
+  
+                  <br>
+  <br>
+  <div class="row">
+                
+    <div class="col-sm-9 text-secondary">
+      <form>
+        <select class="form-select" name="type2"  id="type2" aria-label="Default select example" [(ngModel)]="formtype.type" >
+          <option value="" selected disabled hidden>Choose here</option>
+          <option *ngFor="let number of scales" value={{number}}>{{number}}</option>
+          <input type="reset" value="reset" />
+  
+          
+          
+        </select>
+      </form>
+      
+    </div>
+    <div class="col-sm-3">
+      <button type="button" data-bs-dismiss="modal" aria-label="Close" (click)="addscale()" class="btn btn-success" ><i class="bi bi-patch-check"></i> ajouter </button>
+  
+    </div>
+  
+    <br>
+    <br>
+    <br>
+  </div>
+                </div>
+                <!--
+                  <div *ngIf="test1">
+                  <h6> proposition 1</h6>
+                  <input type="text" id="one" name="propositon1" [(ngModel)]="form.propositon1"> <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test1anglais">
+                  <h6> proposition 1 anglais </h6>
+                  <input type="text" id="oneanglai" name="propositon1anglais" [(ngModel)]="form.propositon1anglais"> <br>
+                  <br>
+                </div>
+                <div *ngIf="test2">
+                  <h6> proposition 2</h6><input type="text" id="two" name="propositon2" [(ngModel)]="form.propositon2">
+                  <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test2anglais">
+                  <h6> proposition 2 anglais</h6><input type="text" id="twoanglais" name="propositon2anglais" [(ngModel)]="form.propositon2anglais">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test3">
+                  <h6> proposition 3</h6><input type="text" id="three" name="propositon3" [(ngModel)]="form.propositon3">
+                  <br>
+  
+                </div>
+                <div *ngIf="test3anglais">
+                  <h6> proposition 3 anglais</h6><input type="text" id="threeanglais" name="propositon3anglais" [(ngModel)]="form.propositon3anglais">
+                  <br>
+  
+                </div>
+  
+                <div *ngIf="test4">
+                  <h6> proposition 4</h6><input type="text" id="four" name="propositon4" [(ngModel)]="form.propositon4">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test4anglais">
+                  <h6> proposition 4 arabe</h6><input type="text" id="fouranglais" name="propositon4anglais" [(ngModel)]="form.propositon4anglais">
+                  <br>
+                  <br>
+                </div>
+  
+        
+  
+                <div *ngIf="test5">
+                  <h6> proposition 5</h6><input type="text" id="five" name="propositon5" [(ngModel)]="form.propositon5">
+                  <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test5anglais">
+                  <h6> proposition 5 anglais</h6><input type="text" id="fiveanglais" name="propositon5anglais" [(ngModel)]="form.propositon5anglais">
+                  <br>
+                  <br>
+                </div>
+                -->
+              </div>
+              <div *ngIf="langue=='conditionarabanglaisfrancais'">
+  
+                <div *ngIf="test">
+                  <h6> question</h6>
+  
+                  <input type="text" id="question" name="question" [(ngModel)]="form.question">
+                  <br>
+                </div>
+                <div *ngIf="testarabe">
+                  <h6>السؤال</h6>
+  
+                  <input type="text" id="questionarabe" name="questionarabe" [(ngModel)]="form.questionarabe">
+                  <br>
+                </div>
+               
+                <div *ngIf="testanglais">
+                  <h6>QUESTION anglais</h6>
+  
+                  <input type="text" id="questionanglais" name="questionanglais" [(ngModel)]="form.questionanglais">
+                  <br>
+                </div>
+  
+                <h6>ordre</h6>
+                <input type="text" id="ordre" name="ordre" [(ngModel)]="form.ordre">
+               <br>
+                <h6>questionCategory</h6>
+                <input type="text" id="questionCategory" name="questionCategory" [(ngModel)]="form.questionCategory">
+                
+  
+  
+                <br>
+  <br>
+  <div class="row">
+              
+  <div class="col-sm-9 text-secondary">
+    <form>
+      <select class="form-select" name="type2"  id="type2" aria-label="Default select example" [(ngModel)]="formtype.type" >
+        <option value="" selected disabled hidden>Choose here</option>
+        <option *ngFor="let number of scales" value={{number}}>{{number}}</option>
+        <input type="reset" value="reset" />
+  
+        
+        
+      </select>
+    </form>
+    
+  </div>
+  <div class="col-sm-3">
+    <button type="button" data-bs-dismiss="modal" aria-label="Close" (click)="addscale()" class="btn btn-success" ><i class="bi bi-patch-check"></i> ajouter </button>
+  
+  </div>
+  
+  <br>
+  <br>
+  <br>
+  </div>
+  
+                <!--
+                  <div *ngIf="test1">
+                  <h6> proposition 1 </h6>
+                  <input type="text" id="one" name="propositon1" [(ngModel)]="form.propositon1"> <br>
+                  <br>
+                </div>
+                <div *ngIf="test1arabe">
+                  <h6>    الإقتراح1</h6>
+                  <input type="text" id="onearabe" name="propositon1arabe" [(ngModel)]="form.propositon1arabe"> <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test1anglais">
+                  <h6> proposition 1 anglais </h6>
+                  <input type="text" id="oneanglai" name="propositon1anglais" [(ngModel)]="form.propositon1anglais"> <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test2">
+                  <h6> proposition 2 </h6><input type="text" id="two" name="propositon2" [(ngModel)]="form.propositon2">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test2arabe">
+                  <h6>    الإقتراح2</h6><input type="text" id="twoarabe" name="propositon2arabe" [(ngModel)]="form.propositon2arabe">
+                  <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test2anglais">
+                  <h6> proposition 2 anglais</h6><input type="text" id="twoanglais" name="propositon2anglais" [(ngModel)]="form.propositon2anglais">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test3">
+                  <h6> proposition 3 </h6><input type="text" id="three" name="propositon3" [(ngModel)]="form.propositon3">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test3arabe">
+                  <h6>    الإقتراح3</h6><input type="text" id="threearabe" name="propositon3arabe" [(ngModel)]="form.propositon3arabe">
+                  <br>
+  
+                </div>
+                <div *ngIf="test3anglais">
+                  <h6> proposition 3 anglais</h6><input type="text" id="threeanglais" name="propositon3anglais" [(ngModel)]="form.propositon3anglais">
+                  <br>
+  
+                </div>
+                <div *ngIf="test4">
+                  <h6> proposition 4 </h6><input type="text" id="four" name="propositon4" [(ngModel)]="form.propositon4">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test4arabe">
+                  <h6>    الإقتراح4</h6><input type="text" id="fourarabe" name="propositon4arabe" [(ngModel)]="form.propositon4arabe">
+                  <br>
+                  <br>
+                </div>
+                <div *ngIf="test4anglais">
+                  <h6> proposition 4 anglais</h6><input type="text" id="fouranglais" name="propositon4anglais" [(ngModel)]="form.propositon4anglais">
+                  <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test5">
+                  <h6> proposition 5 </h6><input type="text" id="five" name="propositon5" [(ngModel)]="form.propositon5">
+                  <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test5arabe">
+                  <h6>    الإقتراح5</h6><input type="text" id="five" name="propositon5arabe" [(ngModel)]="form.propositon5arabe">
+                  <br>
+                  <br>
+                </div>
+  
+                <div *ngIf="test5anglais">
+                  <h6> proposition 5 anglais</h6><input type="text" id="fiveanglais" name="propositon5anglais" [(ngModel)]="form.propositon5anglais">
+                  <br>
+                  <br>
+                </div>
+                -->
+              </div>
+  
+  
+  
+  
+              <!--
+            <div *ngIf="conditionenglais==true"> 
+              <div *ngIf="test">
+                <h6>QUESTION englais</h6>
+                
+                <input type="text" id="question" name="question" [(ngModel)]="form.question">
+                <br>
+              </div>
+              <div *ngIf="test1">
+                <h6> proposition englais 1</h6>
+                <input type="text" id="one" name="propositon1" [(ngModel)]="form.propositon1"> <br>
+                <br>
+              </div>
+              <div *ngIf="test2">
+                <h6> proposition englais 2</h6><input type="text" id="two" name="propositon2" [(ngModel)]="form.propositon2"> <br>
+                <br>
+              </div>
+              <div *ngIf="test3">
+                <h6> proposition englais 3</h6><input type="text" id="three" name="propositon3" [(ngModel)]="form.propositon3"> <br>
+    
+              </div>
+    
+              <div *ngIf="test4">
+                <h6> proposition englais 4</h6><input type="text" id="four" name="propositon4" [(ngModel)]="form.propositon4"> <br>
+                <br>
+              </div>
+    
+              <div *ngIf="test5">
+                <h6> proposition englais 5</h6><input type="text" id="five" name="propositon5" [(ngModel)]="form.propositon5"> <br>
+                <br>
+              </div>
+            </div>  -->
+  
+              <br>
+  
+              
+              <button class="btn btn-primary" type="reset" value="Reset" data-bs-dismiss="modal" aria-label="Close"
+                (click)="onSubmit()">next</button>
+  
+            </form>
+  
+  
+  
+  
+          </div>
+  
+        </div>
+      </div>
+  
+  
+  
+  
+  
+    </div>
+  
+  
+    <br>
+    <!-- Button trigger modal -->
+  
+  
+    <!--   <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel6" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <section class="mail-seccess section">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 offset-lg-3 col-12">
+                  
+                    <hr>
+                    <br>
+                    <div class="success-inner">
+                      <h6><i class="bi bi-envelope-plus"></i><span>
+                          Script Sent Successfully!</span></h6>
+  
+  
+                    </div>
+                    <br>
+                   
+                    <hr>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="/user" class="btn btn-primary btn-md">Go Home</a>
+          </div>
+        </div>
+      </div>
+    </div> --> 
+  
+  </div>
+</html>

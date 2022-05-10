@@ -1,0 +1,630 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<div class="banner"> 
+    <br><br><br><br><br> <br><br><br><br><br> <div class="l" style="text-align: center;">
+    
+    <br>
+    <h1 class="text-light" style="font-size: 50px;  color:aliceblue;font-size: 55px;line-height: 55px;margin-bottom: 20px;font-weight: 900;">  <i class="bi bi-clipboard2-data"></i> ooredoo <br></h1> <h3 class="text-light"> où vous gérez facilement vos enquetes</h3>
+    <p class="text-light mb-0">Ooredoo Tunisie, 1er opérateur privé de télécommunications en Tunisie.</p>
+     <br><button id="tt" type="button"><span></span>edit now</button><br> <br>  
+    <br>
+    </div> </div>
+
+<div class="container">
+    <section class="section mt-20">
+       
+
+
+        <br>      
+        <br>  
+        
+
+
+         <div class="container">
+                    
+                  </div>
+
+                  <br>
+                              <br>
+                              <br>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12 d-lg-block d-none">
+                <!--footerrr-->
+
+                <div class="sidebar sticky-bar  bg-light shadow rounded border-0">
+                    <div class="widget">
+
+                        <div class="row mt-4">
+                            <div class=" text-center">
+                                <!-- <i-feather name="user-plus" class="fea icon-ex-md text-primary mb-1"></i-feather>-->
+                                <br>
+
+                                <h4>Welcome: {{ currentUser.email }}</h4>
+
+                                <hr>
+                                <div class="float-right">
+                                    <i class="fa fa-archive text-primary h4 ml-3"></i>
+                                </div>
+
+                                <h5 class="font-size-20 mt-0 pt-1">{{nombrescript}}</h5>
+                                <p class="text-muted mb-0">Total script</p>
+                            </div>
+                            <!--end col-->
+
+
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <hr>
+
+
+                    <div class="widget ">
+                        <ul class="list-unstyled sidebar-nav mb-0" id="navmenu-nav">
+                            <li class="">
+                                <a routerLink="/profile" style="color: black;" class="">
+                                    <div class="row">
+                                        <div class="col-1"></div>
+                                        <div class="col-1">
+                                            <i class="bi bi-house-door"></i>
+                                        </div>
+                                        <div class="col-10">
+                                            <h6 class="mb-0 ms-2">Profile</h6>
+                                        </div>
+                                    </div>
+                                </a>
+
+
+                            </li>
+
+                            <hr>
+                            <li class=" ">
+                                <a routerLink="/register" style="color: black;" class="">
+                                    <div class="row">
+                                        <div class="col-1"></div>
+                                        <div class="col-1"><i class="bi bi-person-plus"></i></div>
+                                        <div class="col-10">
+                                            <h6 class="mb-0 ms-2">Add admin</h6>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+
+
+                            <hr>
+                            <li class="">
+                                <a routerLink="/profile" style="color: black;" class="">
+                                    <div class="row">
+                                        <div class="col-1"></div>
+                                        <div class="col-1">
+                                            <i class="bi bi-box-arrow-right" style="color: black;"></i>
+                                        </div>
+                                        <div class="col-10">
+                                            <h6 class="mb-0 ms-2" (click)="logout()">LogOut</h6>
+                                        </div>
+                                    </div>
+                                </a>
+
+
+                            </li>
+
+
+
+
+
+
+                        </ul>
+                    </div>
+                    <hr>
+                   
+                    
+                    <div class="widget mt-4 pt-2">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-2"></div>
+                                <div class="col-10">
+                                    <button type="button" class="btn-lg btn-primary" (click)="test()">
+                                         + ajouter script&nbsp; 
+                                    </button>
+                                    <br>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        
+
+                        <!--end icon-->
+                    </div>
+                  
+                    
+                    
+                </div>
+
+                <!-- toufa lena -->
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <div class="col-lg-8 col-md-6 col-12 d-lg-block d-none">
+
+
+
+                <br>
+                <!--
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-pattern">
+                            <div class="card-body bg-light shadow rounded border-0 ">
+                                <div class="float-right">
+                                    <i class="fa fa-archive text-primary h4 ml-3"></i>
+                                </div>
+                                <h5 class="font-size-20 mt-0 pt-1">{{nombreenquete}}</h5>
+                                <p class="text-muted mb-0">Total enquetes</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-3 col-md-6">
+                        
+                        <div class="card bg-pattern">
+                            <div class="card-body bg-light shadow rounded border-0 ">
+                                <div class="float-right">
+                                    <i class="fa fa-th text-primary h4 ml-3"></i>
+                                </div>
+                                <h5 class="font-size-20 mt-0 pt-1">18</h5>
+                                <p class="text-muted mb-0">Completed Projects</p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    
+                    <div class="col-xl-3 col-md-6">
+                        
+                        <div class="card bg-pattern">
+                            <div class="card-body bg-light shadow rounded border-0 ">
+                                <div class="float-right">
+                                    <i class="fa fa-file text-primary h4 ml-3"></i>
+                                </div>
+                                <h5 class="font-size-20 mt-0 pt-1">06</h5>
+                                <p class="text-muted mb-0">Pending Projects</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body bg-light shadow rounded border-0 ">
+                                <form>
+                                    <div class="form-group mb-0">
+                                        <label>Search</label>
+                                        <div class="input-group mb-0">
+                                            <input type="text" class="form-control" placeholder="Search..."
+                                                aria-describedby="project-search-addon" />
+                                            <div class="input-group-append">
+                                                <button class="btn btn-danger" type="button" id="project-search-addon"><i
+                                                        class="fa fa-search search-icon font-12"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 end row -->
+
+                <!--
+
+
+                -->
+                <div>
+                    <div>
+
+                        
+
+                         
+<div class="card bg-light shadow rounded border-0">
+    <div class="card-header bg-danger">
+        <h6 style="color: blanchedalmond;">EN COURS</h6>
+    </div>
+    <div class="card-body" *ngFor="let enquete of scriptencoursaffecte">
+        <div class="row">
+
+
+               
+            <div class="col-1">
+                <h6>id</h6> 
+                <br>
+                <p>{{enquete.id}}</p>
+            </div>
+
+        
+
+
+               
+                <div class="col-2">
+                    <h6>startDate</h6> 
+                    <br>
+                    <p>{{enquete.startDate}}</p>
+                </div>
+                <div class="col-3">
+                    <div class="ms-4">
+                          <h6>endDate</h6>
+                        
+                        <div class="row">
+                    
+                            <div class="col-10">
+                                <div class="text-xs text-muted">
+                                    <br> {{enquete.endDate}}
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-2">
+                    <h6>status</h6> <br> 
+                    <button class="btn btn-success"  (click)="arretenquete(enquete.id)"  *ngIf="enquete.status=='active' ">
+                        {{enquete.status}}</button>
+                        <button class="btn btn-danger" (click)="arretenquete2(enquete.id)" *ngIf="enquete.status=='arrété' ">
+                            {{enquete.status}}</button>
+
+                </div>
+                <div class="col-2">
+                    <h6>scriptid</h6>  <br>
+                  <p>  {{enquete.scriptId}}</p>
+                    <!--
+        <button (click)="deleteEnquete(enquete.id)" class="btn btn-danger"><i
+                class="bi bi-trash"></i></button>-->
+
+                </div>
+                <div class="col-2">
+                    <h6>send</h6> <br> 
+                    <div data-bs-toggle="modal" (click)="bbb(enquete.id)"
+                        data-bs-target="#exampleModall">
+                        <i class="bi bi-send-fill"></i>
+                    </div>
+
+                    <div class="modal fade" id="exampleModall" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <form class="login-form mt-4" name="formemail"
+                            (ngSubmit)="onSubmitemail()" #f="ngForm">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Envoyer enquete</h5>
+                                        <button type="button" class="btn-close"
+                                            data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <h5>sujet</h5>
+                                        <input type="text" id="subject" name="subject"
+                                            [(ngModel)]="formemail.subject">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary">send</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+            <hr>
+        
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div class="card bg-light shadow rounded border-0">
+    <div class="card-header bg-success">
+        <h6 style="color: blanchedalmond;">Dans les prochains jours</h6>
+    </div>
+    <div class="card-body" *ngFor="let enquete of scriptprochainaffecte">
+
+        
+
+            <div class="row">
+
+
+                <div class="col-1">
+                    <h6>id</h6> 
+                    <br>
+                    <p>{{enquete.id}}</p>
+                </div>
+
+                 <div class="col-2">
+                    <h6>startDate</h6> 
+                    <br>
+                    <p>{{enquete.startDate}}</p>
+                </div>
+                <!-- <div class="col-2">
+                    <h6>nbre de question</h6> <br>
+                    <h2 style="color: rgb(248, 128, 128);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {{enquetes.questions.length}}</h2>
+                </div>
+                <div class="col-2">
+                    <h6>nbre de reponse</h6> <br>
+                    
+        <button (click)="deleteEnquete(enquete.id)" class="btn btn-danger"><i
+                class="bi bi-trash"></i></button>-->
+<!--
+                </div>
+                
+                    -->
+                    <div class="col-3">
+                        <div class="ms-4">
+                              <h6>endDate</h6>
+                            
+                            <div class="row">
+                        
+                                <div class="col-10">
+                                    <div class="text-xs text-muted">
+                                        <br> {{enquete.endDate}}
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <h6>status</h6> <br> 
+                        <button class="btn btn-success"  (click)="arretenquete(enquete.id)"  *ngIf="enquete.status=='active' ">
+                            {{enquete.status}}</button>
+                            <button class="btn btn-danger" (click)="arretenquete2(enquete.id)" *ngIf="enquete.status=='arrété' ">
+                                {{enquete.status}}</button>
+
+                    </div>
+                    <div class="col-2">
+                        <h6>scriptid</h6>  <br>
+                      <p>  {{enquete.scriptId}}</p>
+                        
+         
+
+                    </div>
+                    <div class="col-2">
+                        <h6>upload</h6>  <br>
+                      <button type="button" class="btn btn-success" (click)="nextpage(enquete.id)"><i class="bi bi-plus-square"></i></button>
+                        
+         
+
+                    </div>
+            </div>
+            <hr>
+        
+    </div>
+</div>
+
+                    </div>
+                </div>
+                <br>
+                <br>
+
+
+
+                <br>
+
+
+                <div class="card card-header-actions mb-4">
+                    <!---->
+                    <div class="">
+
+
+                        <!-- Button trigger modal -->
+
+
+                        <!-- Modal -->
+                    <div class="card bg-light shadow rounded border-0">
+                            <div class="card-header bg-danger">
+                                <h6 style="color: blanchedalmond;">Script non affecte</h6>
+                            </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="table-responsive project-list">
+                                            <table class="table project-table table-centered table-nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">scriptPool</th>
+                                                        <th scope="col">scriptName</th>
+        
+                                                        <th scope="col">startDate</th>
+                                                        <th scope="col">endDate</th>
+        
+        
+                                                        <th scope="col">affecter enquete</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody *ngFor="let script of scripts">
+                                                    <!--<div *ngIf="script.endDate<date">-->
+                                                    
+                                                        <tr>
+                                                            <th scope="row">{{script.id}}</th>
+                                                             <th scope="row">{{script.scriptPool}}</th>
+                                                             <th scope="row">{{script.scriptName}}</th>
+                
+                                                             <td>{{script.startDate}}</td>
+                                                             <td>{{script.endDate}}</td>
+    
+                                                                <td>
+                                                                    <div   data-bs-toggle="modal"
+                                                                     data-bs-target="#exampleModal"(click)="getid(script.id)">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<i class="bi bi-calendar-plus"></i>
+                                                            
+                                                                    </div>
+                                                                </td>
+                                                       
+                                                        
+                                                        
+                                                        </tr>
+        
+        
+        
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- end project-list -->
+        
+        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <form class=" mt-4" name="form" (ngSubmit)="onSubmit()" #f="ngForm">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Affecter enquete</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6>channel</h6><br>
+                                            <input type="text" id="channel" name="channel"
+                                                [(ngModel)]="form.channel"><br><br>
+                                            <h6>startDate</h6><br>
+                                            <input type="date" id="startDate" name="startDate"
+                                                [(ngModel)]="form.startDate"><br><br>
+                                            <h6>endDate</h6><br>
+                                            <input type="date" id="endDate" name="endDate"
+                                                [(ngModel)]="form.endDate"><br><br>
+
+
+
+                                            <h6 class="mb-0">statut</h6>
+
+                                            <br>
+                                            <select class="form-select" name="type" id="type"
+                                                aria-label="Default select example" [(ngModel)]="form.status">
+
+                                                <option value="active">active</option>
+                                                <option value="arrété">arrété</option>
+
+                                            </select>
+
+
+                                            <br><br>
+                                            <h6>type d'interaction</h6><br>
+                                            <input type="text" id="typeInteraction" name="typeInteraction"
+                                                [(ngModel)]="form.typeInteraction"><br><br>
+                                            <br><br>
+                                            <h6>shortCode</h6><br>
+                                            <input type="text" id="shortCode" name="shortCode"
+                                                [(ngModel)]="form.shortCode"><br><br>
+
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary">send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+                <br>
+
+
+
+                
+            </div>
+
+        </div>
+
+
+        
+
+        <div class="modal fade" id="exampleModalscript" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <form class=" mt-4" name="form" (ngSubmit)="onSubmitscript()" #f="ngForm">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>scriptName</h6><br>
+                            <input type="text" id="scriptName" name="scriptName" [(ngModel)]="form.scriptName"><br><br>
+                            <h6>startDate</h6><br>
+                            <input type="date" id="startDate" name="startDate" [(ngModel)]="form.startDate"><br><br>
+                            <h6>endDate</h6><br>
+                            <input type="date" id="endDate" name="endDate" [(ngModel)]="form.endDate"><br><br>
+
+
+
+
+
+
+
+                            <br><br>
+                            <h6>scriptPool</h6><br>
+                            <input type="text" id="scriptPool" name="scriptPool" [(ngModel)]="form.scriptPool"><br><br>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary">send</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </section>
+
+
+
+
+
+</div>

@@ -1,0 +1,321 @@
+<div class="l">
+    
+     <br><br> <br> 
+    <br>
+    <div class="row justify-content-center text-center mb-4">
+      <div class="col-xl-6 col-lg-8 col-sm-10">
+    
+        
+        <br>
+        <br>
+        
+        <h1 class="" style="font-size: 30px;  color:aliceblue;font-size: 40px;line-height: 40px;margin-bottom: 20px;font-weight: 900;"><i class="bi bi-basket3-fill"></i> ADD SCRIPTS</h1>
+        
+            <p style="color:aliceblue;">Merci de compléter tous les étapes en cliquant sur le button next .</p>
+          
+       
+      </div>
+     
+  </div>
+    
+    
+    <br><br>
+    <br>
+    </div>
+
+
+  <br><br>
+  <br>
+  <div class="container">
+    
+   
+    <div class="row">
+      <div class="col-6">
+        <br>
+        <h3>
+          AJOUTER SCRIPT
+        </h3>
+
+
+        <p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise un texte en faux latin, le Lorem ipsum ou Lipsum.</p>
+        <ul class="timeline">
+
+          <!-- Item 1 -->
+          <li>
+            <div class="direction-r">
+              <div class="flag-wrapper">
+                <span class="flag">créer script</span>
+              </div>
+            </div>
+          </li>
+          
+          <!-- Item 2 -->
+          <li>
+            <div class="direction-l">
+              <div class="flag-wrapper">
+                <span class="flag">choisir la langue</span>
+              </div>
+            </div>
+          </li>
+        
+          <!-- Item 3 -->
+          <li>
+            <div class="direction-r">
+              <div class="flag-wrapper">
+                <span class="flag">ajouter blocs</span>
+                
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="direction-l">
+              <div class="flag-wrapper">
+                <span class="flag">ajouter questions</span>
+              </div>
+            </div>
+          </li>
+          
+        </ul>
+     <br>
+
+    
+    
+      </div>
+
+     
+      <div class="col-6">
+        
+        
+        
+        <form class=" mt-4" name="form"  #f="ngForm">
+          <div class="modal-dialog bg-light shadow rounded border-0">
+              <div class="modal-content  ">
+                  <div class="modal-header bg-danger ">
+                      <h3 class="text-light" id="exampleModalLabel"  ><i class="bi bi-award"></i> ajouter script </h3>
+                      <hr>
+                  </div>
+                  <div class="modal-body bg-light">
+                    <div class="row justify-content-center text-center mb-4">
+                      <div class="col-xl-6 col-lg-8 col-sm-10">
+                        <p class="text-center " style="color: red;">{{alert}}</p>
+        
+                      </div>
+                  </div>
+      
+                   
+                      <h6>scriptName <span class="text-danger">*</span></h6><br>
+                      <div class="col-6">
+                        <input type="text" id="scriptName"  class="form-control" name="scriptName" [(ngModel)]="formscript.scriptName" placeholder="Ecrire le nom du script "><br><br>
+      
+                      </div>
+                      
+                      <h6>startDate<span class="text-danger">*</span></h6><br>
+                      <div class="col-6">
+                        <input type="date" class="form-control " id="startDate" name="startDate" [(ngModel)]="formscript.startDate"><br><br>
+      
+                      </div>
+                      <h6>endDate<span class="text-danger">*</span></h6><br>
+                      <div class="col-6">
+                        <input type="date" id="endDate" class="form-control" name="endDate" [(ngModel)]="formscript.endDate"><br><br>
+      
+                      </div>
+      
+      
+      
+      
+      
+      
+      
+                      <br><br>
+                      <h6>scriptPool<span class="text-danger">*</span></h6><br>
+                      <div class="col-6">
+                        <input type="text"  class="form-control" placeholder="ecire le scriptpool" id="scriptPool" name="scriptPool" [(ngModel)]="formscript.scriptPool"><br><br>
+      
+                      </div>
+      
+      
+                  </div>
+                  <div class="modal-footer bg-light shadow rounded border-0">
+                      <button class="btn btn-danger"(click)="onSubmitscript()"  >next</button>
+                  </div>
+              </div>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+
+
+<br>
+
+
+<!--
+<div class="col-4">
+  <div class="modal fade" id="exampleModalscript" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog bg-light shadow rounded border-0">
+        <div class="modal-content  ">
+            <div class="modal-header bg-light ">
+                <h5 class="modal-title" id="exampleModalLabel">ajouter question </h5>
+                <hr>
+            </div>
+            <div class="modal-body bg-light">
+                
+
+            </div>
+            <div class="modal-footer bg-light shadow rounded border-0">
+                <button class="btn btn-danger" (click)="condition()"  >next</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div >
+  <div class="card mb-4 bg-light shadow rounded border-0 ">
+    <div class="card-body">
+
+      <div class="row">
+        <div class="col-sm-9 ">
+          <h6 class="mb-0">ajouter question radio</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+          <label for="tentacles">nombre de solution (1-5):</label>
+
+          <input type="number" id="tentacles" name="tentacles" value="3" min="1" max="5">
+
+
+
+        </div>
+
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">type de reponse</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+          <select class="form-select" name="type"  id="type" aria-label="Default select example" [(ngModel)]="form.type" >
+
+            <option  value="radio">radio</option>
+            <option value="checkbox">checkbox</option>
+            <option value="text">text</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">language</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+          <select class="form-select" name="type"  id="type"  >
+
+            <option  value="radio">francais</option>
+            <option value="checkbox">arabe</option>
+            <option value="text">anglais</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <h6 class="mb-0"></h6>
+        </div>
+        <div class="col-sm-7 text-secondary">
+
+        </div>
+      </div>
+      
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0"></h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+          <button type="button" (click)="myFunction()" class="btn btn-danger" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">
+          <i class="bi bi-plus-lg"></i>
+         ajouter 
+        </button>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+<br>
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+          <form class="login-form mt-4" name="form"  #f="ngForm">
+            
+           
+  <div *ngIf="test">
+            <h6>QUESTION</h6>
+            
+            <input type="text" id="question" name="question" [(ngModel)]="form.question">
+            <br>
+          </div>
+  
+          <div *ngIf="msg">
+            <h6 >il faut choisir le type de réponse</h6>
+            
+          </div>        
+          
+            <div *ngIf="test1">
+              <h6> proposition 1</h6>
+              <input type="text" id="one" name="propositon1" [(ngModel)]="form.propositon1"> <br>
+              <br>
+            </div>
+            <div *ngIf="test2">
+              <h6> proposition 2</h6><input type="text" id="two" name="propositon2" [(ngModel)]="form.propositon2"> <br>
+              <br>
+            </div>
+            <div *ngIf="test3">
+              <h6> proposition 3</h6><input type="text" id="three" name="propositon3" [(ngModel)]="form.propositon3"> <br>
+  
+            </div>
+  
+            <div *ngIf="test4">
+              <h6> proposition 4</h6><input type="text" id="four" name="propositon4" [(ngModel)]="form.propositon4"> <br>
+              <br>
+            </div>
+  
+            <div *ngIf="test5">
+              <h6> proposition 5</h6><input type="text" id="five" name="propositon5" [(ngModel)]="form.propositon5"> <br>
+              <br>
+            </div>
+            <br>
+            <button class="btn btn-primary" (click)="onSubmit()">send</button>
+            
+            
+  
+          </form>
+
+
+      
+          
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <button class="btn btn-primary" (click)="send()">send</button>
+
+-->
+

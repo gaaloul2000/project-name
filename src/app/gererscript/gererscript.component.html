@@ -1,0 +1,154 @@
+<br><br><br><br>
+<div class="bio-graph-heading">
+    gerer les scripts et les enquetes facilement                       
+
+  </div>
+
+<br><br><br>
+<div class="container">
+    <div class="card bg-light shadow rounded border-0">
+        <div class="card-header bg-success">
+            <h6 style="color: blanchedalmond;">enquete</h6>
+        </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive project-list">
+                        <table class="table project-table table-centered table-nowrap">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                   
+                                   
+    
+                                    <th scope="col">startDate</th>
+                                    <th scope="col">endDate</th>
+    
+                                    
+                                    <th scope="col">delete</th>
+                                    <th scope="col">update status</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let enquete of enquetes">
+                                <!--<div *ngIf="script.endDate<date">-->
+                                
+                                    <tr>
+                                        <th scope="row">{{enquete.id}}</th>
+                                         
+                                         
+    
+                                         <td>{{enquete.startDate}}</td>
+                                         <td>{{enquete.endDate}}</td>
+    
+                                            <td>
+                                                <button (click)="deleteEnquete(enquete.id)" class="btn btn-danger"><i
+                                                    class="bi bi-trash"></i></button>
+                                            </td>
+
+                                            <td scope="row"> <div class="col-2">
+                                           
+                                                <button class="btn btn-success"  (click)="arretenquete(enquete.id)"  *ngIf="enquete.status=='active' ">
+                                                    {{enquete.status}}</button>
+                                                    <button class="btn btn-danger" (click)="arretenquete2(enquete.id)" *ngIf="enquete.status=='arrété' ">
+                                                        {{enquete.status}}</button>
+                            
+                                            </div></td>
+                                   
+                                    
+                                    
+                                    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end project-list -->
+    
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<br><br><br><br>
+
+
+<div class="container">
+    <div class="card bg-light shadow rounded border-0">
+        <div class="card-header bg-success">
+            <h6 style="color: blanchedalmond;">scripts</h6>
+        </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive project-list">
+                        <table class="table project-table table-centered table-nowrap">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">scriptPool</th>
+                                    <th scope="col">scriptName</th>
+    
+                                    <th scope="col">startDate</th>
+                                    <th scope="col">endDate</th>
+    
+    
+                                    <th scope="col">delete</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let script of scripts">
+                                <!--<div *ngIf="script.endDate<date">-->
+                                
+                                    <tr>
+                                        <th scope="row">{{script.id}}</th>
+                                         <th scope="row">{{script.scriptPool}}</th>
+                                         <th scope="row">{{script.scriptName}}</th>
+    
+                                         <td>{{script.startDate}}</td>
+                                         <td>{{script.endDate}}</td>
+    
+                                            <td>
+                                                <button (click)="deletescript(script.id)" class="btn btn-danger"><i
+                                                    class="bi bi-trash"></i></button>
+                                            </td>
+                                   
+                                    
+                                    
+                                    </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end project-list -->
+    
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

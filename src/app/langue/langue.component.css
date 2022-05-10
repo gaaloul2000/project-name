@@ -1,0 +1,68 @@
+  
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.l {
+  background: linear-gradient(-45deg,  #ad3b3b, #f05d5d);
+  background-size: 100% 100%;
+  animation: gradient 11s ease infinite;
+  bottom: 5px;
+  padding: cover;
+  text-align: center;
+  
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+
+  50% {
+      background-position: 100% 50%;
+  }
+
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.task-list {
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 30px 0 0;
+  }
+  .task-list:after {
+    content: "";
+    position: absolute;
+    background: #e2b2b6;
+    height: 100%;
+    width: 2px;
+    top: 0;
+    left: 30px;
+    z-index: 1;
+  }
+  .task-list li {
+    margin-bottom: 30px;
+    padding-left: 55px;
+    position: relative;
+  }
+  .task-list li:last-child {
+    margin-bottom: 0;
+  }
+  .task-list li .task-icon {
+    position: absolute;
+    left: 22px;
+    top: 13px;
+    border-radius: 50%;
+    padding: 2px;
+    width: 17px;
+    height: 17px;
+    z-index: 2;
+    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  
